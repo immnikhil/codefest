@@ -10,9 +10,9 @@
    <script src="https://cdn.tailwindcss.com"></script>
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap');
     .patua {
-      font-family: 'Patua One', cursive;  
+      font-family: 'Oxygen', sans-serif;  
     }
     ul li {
      padding:5px;
@@ -51,14 +51,15 @@
 </head>
 <body>
   <div class="m-auto flex flex-col h-screen">
+    <!-- Navigation Start -->
     <div class="nav py-3 bg-white flex justify-between items-center flex-wrap shadow-md">
      <div class="uppercase px-3 text-xl text-[#012b73] patua tracking-wide"><a href='/'>Hostinger</a></div>
      <div class="flex gap-4 px-3 items-center"><button onclick="flag()"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1-Z7wF-w0lFB_xnJGUpIdw3lRzBRdY4BO6Q&usqp=CAU" class="h-6" alt="Flag" /></button><button onclick="handleToggle(0)" id="menu"><i class="bi bi-list text-3xl"></i></button></div>
      <div class="w-full mt-3 px-4 ba-1 font-semibold text-[#555555] overflow-auto item hidden">
-       <div class="py-3 bb-1 flex justify-between flex-wrap item"><span>Hosting</span><span onclick="handleToggle(1)"><i class="bi bi-chevron-down"></i></span><div class="w-full mt-3 py-2 px-3 ba-1 text-blue-400 hidden"><p class="bb-1 pb-3 pt-1">Web Hosting</p><p class="bb-1 py-3">Cloud Hosting</p><p class="pt-3">WordPress Hosting</p></div></div>
-       <div class="py-3 bb-1 flex justify-between flex-wrap item"><span>VPS</span><span onclick="handleToggle(2)"><i class="bi bi-chevron-down"></i></span><div class="w-full mt-3 py-2 px-3 ba-1 text-blue-400 hidden"><p class="bb-1 pb-3 pt-1">VPS Hosting</p><p class="bb-1 py-3">CyberPanel Hosting</p><p class="pt-3">Minecraft Server Hosting</p></div></div>
-       <div class="py-3 bb-1 flex justify-between flex-wrap item"><span>Email</span><span onclick="handleToggle(3)"><i class="bi bi-chevron-down"></i></span><div class="w-full mt-3 py-2 px-3 ba-1 text-blue-400 hidden"><p class="bb-1 pb-3 pt-1">Google Workspace Email Hosting</p><p class="pt-3">Hostinger Email Hosting</p></div></div>
-       <div class="py-3 bb-1 flex justify-between flex-wrap item"><span>Domain</span><span onclick="handleToggle(4)"><i class="bi bi-chevron-down"></i></span><div class="w-full mt-3 py-2 px-3 ba-1 text-blue-400 hidden"><p class="bb-1 pb-3 pt-1">Domain Name Search</p><p class="bb-1 py-3">WHOIS Lookup</p><p class="pt-3">Domain Transfer</p></div></div>
+       <div class="py-3 bb-1 flex justify-between flex-wrap item"><span>Hosting</span><span onclick="handleToggle(1)"><i class="bi bi-chevron-down"></i></span><div class="w-full mt-3 py-2 px-3 ba-1 text-blue-400 hidden"><p class="bb-1 pb-3 pt-1"><button>Web Hosting</button></p><p class="bb-1 py-3"><button>Cloud Hosting</button></p><p class="pt-3"><button>WordPress Hosting</button></p></div></div>
+       <div class="py-3 bb-1 flex justify-between flex-wrap item"><span>VPS</span><span onclick="handleToggle(2)"><i class="bi bi-chevron-down"></i></span><div class="w-full mt-3 py-2 px-3 ba-1 text-blue-400 hidden"><p class="bb-1 pb-3 pt-1"><button>VPS Hosting</button></p><p class="bb-1 py-3"><button>CyberPanel Hosting</button></p><p class="pt-3"><button>Minecraft Server Hosting</button></p></div></div>
+       <div class="py-3 bb-1 flex justify-between flex-wrap item"><span>Email</span><span onclick="handleToggle(3)"><i class="bi bi-chevron-down"></i></span><div class="w-full mt-3 py-2 px-3 ba-1 text-blue-400 hidden"><p class="bb-1 pb-3 pt-1"><button>Google Workspace Email Hosting</button></p><p class="pt-3"><button>Hostinger Email Hosting</button></p></div></div>
+       <div class="py-3 bb-1 flex justify-between flex-wrap item"><span>Domain</span><span onclick="handleToggle(4)"><i class="bi bi-chevron-down"></i></span><div class="w-full mt-3 py-2 px-3 ba-1 text-blue-400 hidden"><p class="bb-1 pb-3 pt-1"><button>Domain Name Search</button></p><p class="bb-1 py-3"><button>WHOIS Lookup</button></p><p class="pt-3"><button>Domain Transfer</button></p></div></div>
        <div class="py-3 bb-1"><button class="w-full text-left" onclick="alert('My Cart is under Progress.')">My Cart</button></div>
        <div class="flex justify-center w-full pt-3 px-8"><button class="w-full max-w-[500px] bg-[#012b73] text-white py-2 text-lg font-semibold rounded-full" onclick="window.location.href = '/login.html'">Log In <i class="bi bi-shield-lock text-xl"></i></button></div>
      </div>
@@ -79,6 +80,7 @@
       </div>
      </div>
     </div>
+    <!-- Navigation End -->
     <script>
      let handleToggle =(ind)=> {
         let item = document.getElementsByClassName('item')[ind];
@@ -118,10 +120,14 @@
       else { fc.style.display = 'none'; }
      }
     </script>
+    <!-- Content -->
     <main class="flex-1 overflow-y-auto">
-    <div class="banner bg-gradient-to-b from-sky-300 to-blue-500 h-[650px] flex items-center justify-center flex-wrap text-white px-8">
-      <div class="text-center"><span class="block text-center pb-5"><center><img src="https://cdn-icons-png.flaticon.com/512/8456/8456564.png" class="h-40 banner-ico" alt="ico"/></center></span><span class="text-2xl font-medium">Host your website on Premium Hosting at just</span><span class="text-5xl font-semibold block py-5">₹149<span class="text-lg">/mo</span></span><span>with Free domain and SSL</span><button class="font-semibold block mt-6 m-auto py-2 px-8 bg-[#012B73] rounded-full text-md">Get Started</button></div>
+    <!-- Banner Start -->
+    <div class="banner bg-gradient-to-b from-sky-300 to-blue-500 h-[630px] flex items-center justify-center flex-wrap text-white px-8">
+      <div class="text-center"><span class="block text-center pb-5"><center><img src="https://cdn-icons-png.flaticon.com/512/8456/8456564.png" class="h-40 banner-ico" alt="ico"/></center></span><span class="text-2xl font-medium">Host your website on Premium Hosting at just</span><span class="text-5xl font-semibold block py-5">₹149<span class="text-lg">/mo</span></span><span class="font-medium text-md">with Free domain and SSL</span><button class="font-semibold block mt-4 m-auto py-3 px-10 bg-[#012B73] rounded-full text-lg">Get Started</button></div>
     </div>
+    <!-- Banner End -->
+    <!-- Pricing Section Start-->
     <div class="py-8 px-5 pb-7">
      <p class="text-center text-[#012b73] font-bold text-2xl pb-8">Our Web Hosting Plans</p>
      <div class="w-full rounded overflow-hidden">
@@ -239,6 +245,7 @@
      </div>
      </div>
     </div>
+    <!-- Pricing Section End -->
     <script type="text/javascript">
       var counter = 2;
       document.getElementById('radio1').checked = true;
@@ -257,6 +264,7 @@
           else { m.style.display = 'none'; mfb.innerHTML = 'See All Features'; }
       }
     </script>
+    <!-- Sevice Section Start -->
     <div class="py-5 md:px-5">
      <p class="text-center text-[#012b73] font-bold text-2xl pb-4">Our Plan Features</p>
      <div class="flex justify-center gap-3 flex-wrap sm:px-3 text-[#555555] text-md font-medium">
@@ -271,11 +279,15 @@
       <div class="px-2 py-1 flex min-w-[300px]"><div class="py-0 pr-3"><i class="bi bi-check-lg text-3xl text-bold text-green-300"></i></div><div class="flex items-center justify-center">99.9% Uptime Guarantee</div></div>
      </div>
     </div>
+    <!-- Service Section End -->
+    <!-- Find Domain Start -->
     <div class="bg-sky-100 text-[#012b73] py-8 px-5">
       <div class="block text-2xl font-semibold text-center">Hostinger's Domain</div>
       <div class="text-sm py-3 text-center">Find (.in, .com, .online, .live, .store, .info and more) perfect domains at best Pricing</div>      
       <div class="flex pt-2"><input class="grow rounded-l-lg px-3 h-10 border-2 border-[#012b73] outline-none" placeholder="Type your business Name"/><button class="p-2 px-4 bg-[#012B73] text-white rounded-r-lg h-10"><i class="bi bi-search"></i></button></div>      
     </div>
+    <!-- Find Domain End -->
+    <!-- Features Start -->
     <div class="px-5 pt-10">
      <p class="text-center text-[#012b73] font-bold text-xl pb-5">User-Friendly Control Panel</p>
      <div class="flex gap-2.5 flex-wrap justify-center">
@@ -299,14 +311,18 @@
     <div class="py-10 px-5">
      <p class="text-center text-[#012b73] font-bold text-xl pb-3">30 days Money back Gurantee</p>
      <div class="text-md text-center text-[#8D8D8D] pb-5">If you’re not completely happy within your first 30 days with us, we’ll refund your money: no hassle, no questions, no worry.</div>
-     <center><button class="bg-[#012b73] text-white px-8 rounded-full py-2 text-lg font-semibold">Order Now <i class="bi bi-arrow-right"></i></button></center>
+     <center><button class="bg-[#012b73] text-white px-8 rounded-full py-3 text-lg font-semibold">Order Now <i class="bi bi-arrow-right"></i></button></center>
     </div>
+    <!-- Features End -->
+    <!-- Social Accounts Start -->
     <div class="pb-10 px-5">
       <p class="text-center text-[#012b73] font-bold text-xl pb-3">Connect With Us</p>
       <div class="text-4xl flex justify-center gap-3">
         <button onclick="window.location.href = 'https://lt.linkedin.com/company/hostinger-international'"><i class="bi bi-linkedin text-[#0027B1]"></i></button><button onclick="window.location.href = 'https://www.facebook.com/Hostinger'"><i class="bi bi-facebook text-[#1877f2]"></i></button><button onclick="window.location.href = 'https://www.instagram.com/hostinger_global/'"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" class="h-9" alt="Instagram" /></button><button onclick="window.location.href = 'https://twitter.com/Hostinger'"><i class="bi bi-twitter text-[#00acee]"></i></button><button onclick="window.location.href = 'https://www.youtube.com/HostingerAcademy'"><i class="bi bi-youtube text-[#FF0000]"></i></button>
       </div>
     </div>
+    <!-- Social Accounts End -->
+    <!-- Footer Start -->
     <div class="footer bg-sky-100 p-5">
      <img src="https://assets.hostinger.com/images/logo-homepage2020-f9c79137d7.svg" alt="icon" />
      <p class="text-sm text-[#012B73] pt-3">We are a web hosting company with a mission to help everyone who goes online succeed.
@@ -348,6 +364,7 @@ We accomplish this by continuously developing server technology, giving expert a
      <hr class="bg-blue-800"/>
      <p class="pt-2 text-sm text-[#012B73] font-small">© 2004-2022 hostinger.in - India’s #1 Web Hosting & Domains provider.</p>
     </div>
+    <!-- Footer End -->
     </main>
   </div>
   <script>
