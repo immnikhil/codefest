@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Hostinger</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="theme-color" content="#FFFFFF"/>
+   <meta name="" content="Nikhil Raj" />
+   <link rel="icon" type="image/svg" sizes="32*32" href="https://cdn.worldvectorlogo.com/logos/hostinger.svg" />
+   <script src="https://cdn.tailwindcss.com"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+    .patua {
+      font-family: 'Patua One', cursive;  
+    }
+    ul li {
+     padding:5px;
+    }
+    .bb-1 {
+      border-bottom: 1px solid #dbeafe;
+    }
+    .ba-1 {
+      border-top:1px solid #dbeafe;
+    }
+    .bo-1 {
+      border:1px solid #dbeafe;
+    }
+    #radio1, #radio2, #radio3 {
+    	display:none;
+    }
+    #radio1:checked ~ .slides {
+    	margin-left:0%;
+    }
+    #radio2:checked ~ .slides {
+    	margin-left:-100%;
+    }
+    #radio3:checked ~ .slides {
+    	margin-left:-200%;
+    }
+    #radio1:checked ~ .controls .manual-1 {
+    	background:#EF4444;
+    }
+    #radio2:checked ~ .controls .manual-2 {
+    	background:#0EA5E9;
+    }
+    #radio3:checked ~ .controls .manual-3 {
+    	background:#22C55E;
+    }
+   </style>
+</head>
+<body>
+  <div class="m-auto flex flex-col h-screen">
+    <div class="nav py-3 bg-white flex justify-between items-center flex-wrap shadow-md">
+     <div class="uppercase px-3 text-xl text-[#012b73] patua tracking-wide"><a href='/'>Hostinger</a></div>
+     <div class="flex gap-4 px-3 items-center"><button onclick="flag()"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1-Z7wF-w0lFB_xnJGUpIdw3lRzBRdY4BO6Q&usqp=CAU" class="h-6" alt="Flag" /></button><button onclick="handleToggle(0)" id="menu"><i class="bi bi-list text-3xl"></i></button></div>
+     <div class="w-full mt-3 px-4 ba-1 font-semibold text-[#555555] overflow-auto item hidden">
+       <div class="py-3 bb-1 flex justify-between flex-wrap item"><span>Hosting</span><span onclick="handleToggle(1)"><i class="bi bi-chevron-down"></i></span><div class="w-full mt-3 py-2 px-3 ba-1 text-blue-400 hidden"><p class="bb-1 pb-3 pt-1">Web Hosting</p><p class="bb-1 py-3">Cloud Hosting</p><p class="pt-3">WordPress Hosting</p></div></div>
+       <div class="py-3 bb-1 flex justify-between flex-wrap item"><span>VPS</span><span onclick="handleToggle(2)"><i class="bi bi-chevron-down"></i></span><div class="w-full mt-3 py-2 px-3 ba-1 text-blue-400 hidden"><p class="bb-1 pb-3 pt-1">VPS Hosting</p><p class="bb-1 py-3">CyberPanel Hosting</p><p class="pt-3">Minecraft Server Hosting</p></div></div>
+       <div class="py-3 bb-1 flex justify-between flex-wrap item"><span>Email</span><span onclick="handleToggle(3)"><i class="bi bi-chevron-down"></i></span><div class="w-full mt-3 py-2 px-3 ba-1 text-blue-400 hidden"><p class="bb-1 pb-3 pt-1">Google Workspace Email Hosting</p><p class="pt-3">Hostinger Email Hosting</p></div></div>
+       <div class="py-3 bb-1 flex justify-between flex-wrap item"><span>Domain</span><span onclick="handleToggle(4)"><i class="bi bi-chevron-down"></i></span><div class="w-full mt-3 py-2 px-3 ba-1 text-blue-400 hidden"><p class="bb-1 pb-3 pt-1">Domain Name Search</p><p class="bb-1 py-3">WHOIS Lookup</p><p class="pt-3">Domain Transfer</p></div></div>
+       <div class="py-3 bb-1"><button class="w-full text-left" onclick="alert('My Cart is under Progress.')">My Cart</button></div>
+       <div class="flex justify-center w-full pt-3 px-8"><button class="w-full max-w-[500px] bg-[#012b73] text-white py-2 text-lg font-semibold rounded-full" onclick="window.location.href = '/login.html'">Log In <i class="bi bi-shield-lock text-xl"></i></button></div>
+     </div>
+     <div class="mt-3 w-full bg-[#efeFeF] py-3 px-4 hidden flags">
+      <div class="flex bg-white rounded-full bo-1"><input class="grow rounded-full px-5 outline-none" placeholder="Type Language Name..."/><button class="px-4 py-2 outline-none"><i class="bi bi-search text-xl text-blue-500"></i></button></div>
+      <div class="bg-white rounded-2xl mt-2 bo-1 py-5 px-4">
+       <div class="flex gap-2 items-center bb-1 py-2"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiICRKESXDqstWtHHyqX1ttdCUiqp7K_DNeA&usqp=CAU" class="w-11" alt="National Flag" /><p class="font-semibold text-md">India</p><p class="text-[#8D8D8D] text-sm">हिंदी</p></div>
+       <div class="flex gap-2 items-center bb-1 py-2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Flag_of_Nepal.svg/1200px-Flag_of_Nepal.svg.png" class="w-11" alt="National Flag" /><p class="font-semibold text-md">Nepal</p><p class="text-[#8D8D8D] text-sm">Nepali</p></div>
+       <div class="flex gap-2 items-center bb-1 py-2"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHl8wY6TY6_Pr8Pw-cO9KaP77j86U34L-0bQ&usqp=CAU" class="w-11" alt="National Flag" /><p class="font-semibold text-md">United States</p><p class="text-[#8D8D8D] text-sm">English</p></div>
+       <div class="flex gap-2 items-center bb-1 py-2"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhAdKz_lEo6d5dshqQPfXThZ7AtYiIzmuM5Q&usqp=CAU" class="w-11" alt="National Flag" /><p class="font-semibold text-md">Argentina</p><p class="text-[#8D8D8D] text-sm">Españsol</p></div>
+       <div class="flex gap-2 items-center bb-1 py-2"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmrrlDw5i4reqjzKA-ER1fV33fwfOZukoXCw&usqp=CAU" class="w-11" alt="National Flag" /><p class="font-semibold text-md">Brasil</p><p class="text-[#8D8D8D] text-sm">Português</p></div>
+       <div class="flex gap-2 items-center bb-1 py-2"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKWQDNEGXlaDVohvpiYyaSWTMYoAPdwtVRnQ&usqp=CAU" class="w-11" alt="National Flag" /><p class="font-semibold text-md">Denmark</p><p class="text-[#8D8D8D] text-sm">Dansk</p></div>
+       <div class="flex gap-2 items-center bb-1 py-2"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWPC5ilumAiRxX6ZDmNEG8mkziSvtJrZKzhg&usqp=CAU" class="w-11" alt="National Flag" /><p class="font-semibold text-md">Indonesia</p><p class="text-[#8D8D8D] text-sm">Indonesia</p></div>
+       <div class="flex gap-2 items-center bb-1 py-2"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDRinVD-HrP0LkNVCgyG_uoQq6iRVa8Wo-Yg&usqp=CAU" class="w-11" alt="National Flag" /><p class="font-semibold text-md">Malayasia</p><p class="text-[#8D8D8D] text-sm">English</p></div>
+       <div class="flex gap-2 items-center bb-1 py-2"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRirj6s57u-jTSJGVXGtr74-nE83HNsFXWiDg&usqp=CAU" class="w-11" alt="National Flag" /><p class="font-semibold text-md">South Korea</p><p class="text-[#8D8D8D] text-sm">Korean</p></div>
+       <div class="flex gap-2 items-center bb-1 py-2"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsYa_1qEzsSX0ZTuNrrhyzbopiVZDhpKStOA&usqp=CAU" class="w-11" alt="National Flag" /><p class="font-semibold text-md">Turkey</p><p class="text-[#8D8D8D] text-sm">Türkçe</p></div>
+       <div class="flex gap-2 items-center bb-1 py-2"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgno2lCLHnUNmsKDV4UAYBqMvz4lNLYQWVUA&usqp=CAU" class="w-11" alt="National Flag" /><p class="font-semibold text-md">United Kingdom</p><p class="text-[#8D8D8D] text-sm">English</p></div>
+      </div>
+     </div>
+    </div>
+    <script>
+     let handleToggle =(ind)=> {
+        let item = document.getElementsByClassName('item')[ind];
+        let menu = document.getElementById('menu');
+      if(ind == 0){
+       if(item.style.display == 'none'){
+         item.style.display = 'block';
+         menu.innerHTML = '<i class="bi bi-x-lg text-2xl"></i>';
+       } 
+       else { 
+         item.style.display = 'none';
+         menu.innerHTML = '<i class="bi bi-list text-3xl"></i>';
+       }
+      }
+      else {    
+       let div = item.getElementsByTagName('div')[0];
+       let span = item.getElementsByTagName('span')[0];
+       let button = item.getElementsByTagName('span')[1];
+       if(div.style.display == 'none'){
+         div.style.display = 'block';
+         span.style.color = '#012B73';
+         button.style.color = '#012B73';
+         button.innerHTML = '<i class="bi bi-chevron-up"></i>';   
+       } 
+       else { 
+         div.style.display = 'none';
+         span.style.color = '#555555';
+         button.style.color = '#555555';
+         button.innerHTML = '<i class="bi bi-chevron-down"></i>';
+       }
+      }
+     }
+
+     function flag() {
+      var fc = document.getElementsByClassName('flags')[0];
+      if(fc.style.display == 'none'){ fc.style.display = 'block'; }
+      else { fc.style.display = 'none'; }
+     }
+    </script>
+    <main class="flex-1 overflow-y-auto">
+    <div class="banner bg-gradient-to-b from-sky-300 to-blue-500 h-[650px] flex items-center justify-center flex-wrap text-white px-8">
+      <div class="text-center"><span class="block text-center pb-5"><center><img src="https://cdn-icons-png.flaticon.com/512/8456/8456564.png" class="h-40 banner-ico" alt="ico"/></center></span><span class="text-2xl font-medium">Host your website on Premium Hosting at just</span><span class="text-5xl font-semibold block py-5">₹149<span class="text-lg">/mo</span></span><span>with Free domain and SSL</span><button class="font-semibold block mt-6 m-auto py-2 px-8 bg-[#012B73] rounded-full text-md">Get Started</button></div>
+    </div>
+    <div class="py-8 px-5 pb-7">
+     <p class="text-center text-[#012b73] font-bold text-2xl pb-8">Our Web Hosting Plans</p>
+     <div class="w-full rounded overflow-hidden">
+     <input type="radio" id="radio1" name="radio" /><input type="radio" id="radio2" name="radio" /><input type="radio" id="radio3" name="radio" />
+      <div class="w-[300%] lg:w-full flex lg:gap-3 slides transition duration-1000">
+       <!-- Slides Start -->
+       <div class="w-1/3 rounded-md card ">
+        <div class="bg-red-500 p-3 text-center text-xl text-white font-semibold rounded-t-md shadow-lg">Single Web Hosting</div>
+        <div class="border-2 pt-2 rounded-b-md md:flex flex-wrap justify-center items-center">
+         <div class="py-3 min-w-[300px]">
+          <p class="text-xl text-center pt-5 pb-1 text-[#012B73] font-semibold"><span class="text-5xl">₹69.00</span>/mo</p>
+          <p class="text-center text-[#012B73] text-sm font-semibold">₹159.00/mo when you renew</p>
+          <div class="flex justify-center pt-6 pb-3"><button class="py-2 px-12 bg-red-500 rounded-full text-lg font-semibold text-white">Add to Cart</button></div>
+         </div>
+         <div class="pb-3 min-w-[300px]">
+          <p class="text-center text-xl text-[#012B73] font-semibold md:pt-5">Plan Features</p>
+          <div class="pt-4 pb-6 px-6 text-md text-[#555555]">
+           <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-500"></i></div><div><b>1 </b> Website</div></div>
+           <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-500"></i></div><div><b>50 GB</b> SSD Storage</div></div>
+           <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-500"></i></div><div><b>~10000 </b> Visits Monthly</div></div>
+           <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-500"></i></div><div><b>100 GB </b> Bandwidth</div></div>
+           <div class="m-feature text-[#555555] w-full hidden">
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-500"></i></div><div><b>1 </b>Email Account</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-500"></i></div><div><b>1 </b>FTP Account</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-500"></i></div><div><b>Unlimited </b>Free SSL</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-500"></i></div><div><b>Cloudflare </b>Protected Nameservers</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-500"></i></div><div><b>Weekly </b>Backups</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-x-lg text-red-500"></i></div><div><b>Free </b> Domain</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-500"></i></div><div><b>Managed </b>WordPress</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-x-lg text-red-500"></i></div><div><b>SSH </b>Access</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-500"></i></div><div><b>30 Days </b>Money Back Gurantee</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-500"></i></div><div><b>27/7/365 </b>Support</div></div>
+           </div>
+          </div>       
+         </div>
+         <div class="border-t-2 text-center py-3 w-full">
+           <button class="text-md font-medium text-[#012B73] py-1 underline mf-b" onclick="showF(0)">See All Features</button>
+         </div>
+        </div>
+       </div>
+       <div class="w-1/3 rounded-md">
+        <div class="bg-sky-500 p-3 text-center text-xl text-white font-semibold rounded-t-md shadow-lg">Best Web Hosting</div>
+        <div class="border-2 pt-2 rounded-b-md md:flex flex-wrap justify-center items-center">
+         <div class="py-3 min-w-[300px]">
+          <p class="text-xl text-center pt-5 pb-1 text-[#012B73] font-semibold"><span class="text-5xl">₹149.00</span>/mo</p>
+          <p class="text-center text-[#012B73] text-sm font-semibold">₹249.00/mo when you renew</p>
+          <div class="flex justify-center pt-6 pb-3"><button class="py-2 px-12 bg-sky-500 rounded-full text-lg font-semibold text-white">Add to Cart</button></div>
+         </div>
+         <div class="pb-3 min-w-[300px]">
+          <p class="text-center text-xl text-[#012B73] font-semibold md:pt-5">Plan Features</p>
+          <div class="pt-4 pb-6 px-6 text-md text-[#555555]">
+           <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>Unlimited</b> Free SSL</div></div>
+           <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>Free</b> Domain</div></div>
+           <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>Free</b> Email</div></div>
+           <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>100 GB </b> SSD Storage</div></div>
+           <div class="m-feature w-full text-[#555555] hidden">
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>100 </b>Websites</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>Unlimited </b>Bandwidth</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>100 </b>Subdomains</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>Unlimited </b>FTP Account</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>Optimized</b> For WordPress</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>Cloudflare </b> Protected Nameservers</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>Weekly </b>Backups</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>SSH </b>Access</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>30 Days </b>Money Back Gurantee</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>24/7/365 </b>Support</div></div>
+           </div>
+          </div>
+         </div>
+         <div class="border-t-2 text-center py-3 w-full">
+           <button class="text-md font-medium text-[#012B73] py-1 underline mf-b" onclick="showF(1)">See All Features</button>
+         </div>
+        </div>
+       </div>
+       <div class="w-1/3 rounded-md">
+        <div class="bg-green-500 p-3 text-center text-xl text-white font-semibold rounded-t-md shadow-lg">Business Web Hosting</div>
+        <div class="border-2 pt-2 rounded-b-md md:flex flex-wrap justify-center items-center">
+         <div class="py-3 min-w-[300px]">
+          <p class="text-xl text-center pt-5 pb-1 text-[#012B73] font-semibold"><span class="text-5xl">₹249.00</span>/mo</p>
+          <p class="text-center text-[#012B73] text-sm font-semibold">₹499.00/mo when you renew</p>
+          <div class="flex justify-center pt-6 pb-3"><button class="py-2 px-12 bg-green-500 rounded-full text-lg font-semibold text-white">Add to Cart</button></div>
+         </div>
+         <div class="pb-3 min-w-[300px]">
+          <p class="text-center text-xl text-[#012B73] font-semibold md:pt-5">Plan Features</p>
+          <div class="pt-4 pb-6 px-6 text-md text-[#555555]">
+           <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>100</b> Websites</div></div>
+           <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>200 GB</b> SSD Storage</div></div>
+           <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>~1 00 000</b> Visits Monthly</div></div>
+           <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>Unlimited</b> Bandwidth</div></div>
+           <div class="m-feature w-full text-[#555555] hidden">
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>Daily </b>Backups (₹1380.00 value)</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>Free </b>Domain (₹749.00 value)</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>Unlimited </b>Free SSL</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>Cloudflare </b>Protected Nameservers</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>Optimized </b>For WordPress</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>100 </b>Subdomains</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>Unlimited </b>FTP Accounts</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>GIT </b>Access</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>SSH </b>Access</div></div>
+            <div class="flex gap-2 py-2"><div><i class="bi bi-check-lg text-green-300"></i></div><div><b>99.9% </b> Uptime Gurantee</div></div>
+           </div>
+          </div>
+         </div>
+         <div class="border-t-2 text-center py-3 w-full">
+           <button class="text-md font-medium text-[#012B73] py-1 underline mf-b" onclick="showF(2)">See All Features</button>
+         </div>
+        </div>
+       </div>
+       <!-- Slides End -->
+      </div>
+     <div class="flex items-center justify-center pt-5 gap-2 controls lg:hidden">
+      <label for="radio1" class="border-2 border-red-500 p-[6px] rounded-full manual-1"></label>
+      <label for="radio2" class="border-2 border-sky-500 p-[6px] rounded-full manual-2"></label>
+      <label for="radio3" class="border-2 border-green-500 p-[6px] rounded-full manual-3"></label>
+     </div>
+     </div>
+    </div>
+    <script type="text/javascript">
+      var counter = 2;
+      document.getElementById('radio1').checked = true;
+      if(window.innerWidth < 1024){
+        setInterval(function(){
+         document.getElementById('radio' + counter).checked = true;
+         counter++;
+         if(counter > 3){ counter = 1; }
+       }, 5000);
+      }
+      
+      function showF(i) {	
+      	var m = document.getElementsByClassName('m-feature')[i];
+      	var mfb = document.getElementsByClassName('mf-b')[i];
+          if(m.style.display == 'none'){ m.style.display = 'block'; mfb.innerHTML = 'See Less Features'; }
+          else { m.style.display = 'none'; mfb.innerHTML = 'See All Features'; }
+      }
+    </script>
+    <div class="py-5 md:px-5">
+     <p class="text-center text-[#012b73] font-bold text-2xl pb-4">Our Plan Features</p>
+     <div class="flex justify-center gap-3 flex-wrap sm:px-3 text-[#555555] text-md font-medium">
+      <div class="px-2 py-1 flex min-w-[300px]"><div class="py-0 pr-3"><i class="bi bi-check-lg text-3xl text-bold text-green-300"></i></div><div class="flex items-center justify-center">Free SSL</div></div>
+      <div class="px-2 py-1 flex min-w-[300px]"><div class="py-0 pr-3"><i class="bi bi-check-lg text-3xl text-bold text-green-300"></i></div><div class="flex items-center justify-center">Access Management</div></div>
+      <div class="px-2 py-1 flex min-w-[300px]"><div class="py-0 pr-3"><i class="bi bi-check-lg text-3xl text-bold text-green-300"></i></div><div class="flex items-center justify-center">eCommerce Optimization</div></div>
+      <div class="px-2 py-1 flex min-w-[300px]"><div class="py-0 pr-3"><i class="bi bi-check-lg text-3xl text-bold text-green-300"></i></div><div class="flex items-center justify-center">Automated backups</div></div>
+      <div class="px-2 py-1 flex min-w-[300px]"><div class="py-0 pr-3"><i class="bi bi-check-lg text-3xl text-bold text-green-300"></i></div><div class="flex items-center justify-center">PHP Speed Boost</div></div>
+      <div class="px-2 py-1 flex min-w-[300px]"><div class="py-0 pr-3"><i class="bi bi-check-lg text-3xl text-bold text-green-300"></i></div><div class="flex items-center justify-center">LiteSpeed Cache Plugin</div></div>
+      <div class="px-2 py-1 flex min-w-[300px]"><div class="py-0 pr-3"><i class="bi bi-check-lg text-3xl text-bold text-green-300"></i></div><div class="flex items-center justify-center">One-Click WordPress Installation</div></div>
+      <div class="px-2 py-1 flex min-w-[300px]"><div class="py-0 pr-3"><i class="bi bi-check-lg text-3xl text-bold text-green-300"></i></div><div class="flex items-center justify-center">24/7/365 Tech Support</div></div>
+      <div class="px-2 py-1 flex min-w-[300px]"><div class="py-0 pr-3"><i class="bi bi-check-lg text-3xl text-bold text-green-300"></i></div><div class="flex items-center justify-center">99.9% Uptime Guarantee</div></div>
+     </div>
+    </div>
+    <div class="bg-sky-100 text-[#012b73] py-8 px-5">
+      <div class="block text-2xl font-semibold text-center">Hostinger's Domain</div>
+      <div class="text-sm py-3 text-center">Find (.in, .com, .online, .live, .store, .info and more) perfect domains at best Pricing</div>      
+      <div class="flex pt-2"><input class="grow rounded-l-lg px-3 h-10 border-2 border-[#012b73] outline-none" placeholder="Type your business Name"/><button class="p-2 px-4 bg-[#012B73] text-white rounded-r-lg h-10"><i class="bi bi-search"></i></button></div>      
+    </div>
+    <div class="px-5 pt-10">
+     <p class="text-center text-[#012b73] font-bold text-xl pb-5">User-Friendly Control Panel</p>
+     <div class="flex gap-2.5 flex-wrap justify-center">
+      <div class="p-2 flex border-2 border-blue-100 rounded-xl w-[360px]">
+       <span class="flex items-center justify-center pl-1 pr-3 py-2 text-sky-500"><img src="https://cdn-icons-png.flaticon.com/512/5828/5828065.png" class="w-40" alt="icon"/></span>
+       <span><p class="text-lg text-[#012B73] font-semibold">Ease of Use</p>
+       <p class="text-sm text-[#555555]">Hostinger Panel is extremely user-friendly and can be used by those with little experience in website development.</p></span>
+      </div>
+      <div class="p-2 flex border-2 border-blue-100 rounded-xl w-[360px]">
+       <span class="flex items-center justify-center pl-1 pr-3 py-2"><img src="https://cdn-icons-png.flaticon.com/512/3436/3436188.png" class="w-28" alt="icon"/></span>
+       <span><p class="text-lg text-[#012B73] font-semibold">Powerful</p>
+       <p class="text-sm text-[#555555]">A wide variety of tools to satisfy advanced user and website developer needs.</p></span>
+      </div>
+      <div class="p-2 flex border-2 border-blue-100 rounded-xl w-[360px]">
+       <span class="flex items-center justify-center pl-1 pr-3 py-2"><img src="https://cdn-icons-png.flaticon.com/512/174/174881.png" class="w-40" alt="icon"/></span>
+       <span><p class="text-lg text-[#012b73] font-semibold">WordPress Optimised</p>
+       <p class="text-sm text-[#555555]">Get more speed, better SEO, visitor retention and conversions with our custom-built WP optimization stack and LiteSpeed cache.</p></span>
+      </div>
+     </div>
+    </div>
+    <div class="py-10 px-5">
+     <p class="text-center text-[#012b73] font-bold text-xl pb-3">30 days Money back Gurantee</p>
+     <div class="text-md text-center text-[#8D8D8D] pb-5">If you’re not completely happy within your first 30 days with us, we’ll refund your money: no hassle, no questions, no worry.</div>
+     <center><button class="bg-[#012b73] text-white px-8 rounded-full py-2 text-lg font-semibold">Order Now <i class="bi bi-arrow-right"></i></button></center>
+    </div>
+    <div class="pb-10 px-5">
+      <p class="text-center text-[#012b73] font-bold text-xl pb-3">Connect With Us</p>
+      <div class="text-4xl flex justify-center gap-3">
+        <button onclick="window.location.href = 'https://lt.linkedin.com/company/hostinger-international'"><i class="bi bi-linkedin text-[#0027B1]"></i></button><button onclick="window.location.href = 'https://www.facebook.com/Hostinger'"><i class="bi bi-facebook text-[#1877f2]"></i></button><button onclick="window.location.href = 'https://www.instagram.com/hostinger_global/'"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" class="h-9" alt="Instagram" /></button><button onclick="window.location.href = 'https://twitter.com/Hostinger'"><i class="bi bi-twitter text-[#00acee]"></i></button><button onclick="window.location.href = 'https://www.youtube.com/HostingerAcademy'"><i class="bi bi-youtube text-[#FF0000]"></i></button>
+      </div>
+    </div>
+    <div class="footer bg-sky-100 p-5">
+     <img src="https://assets.hostinger.com/images/logo-homepage2020-f9c79137d7.svg" alt="icon" />
+     <p class="text-sm text-[#012B73] pt-3">We are a web hosting company with a mission to help everyone who goes online succeed.
+We accomplish this by continuously developing server technology, giving expert assistance, and ensuring a flawless online website hosting experience.</p>
+     <div class="flex space-around flex-wrap gap-2 py-3"><img src="https://assets.hostinger.com/images/payments/homepage-2020-payments/rupay-2bad18f6df.png" alt="Card" /><img src="https://assets.hostinger.com/images/payments/homepage-2020-payments/visa-5d68dadf24.png" alt="Card" /><img src="https://assets.hostinger.com/images/payments/homepage-2020-payments/mastercard-ca75c7f8d3.png" alt="Card" /><img src="https://assets.hostinger.com/images/payments/homepage-2020-payments/dinersclub-3f02e2deec.png" alt="Card" /><img src="https://assets.hostinger.com/images/payments/homepage-2020-payments/discover-1e5edf3f39.png" alt="Card" /></div>
+     <hr class="bg-blue-800"/>
+     <div class="py-3 text-[#666666]">
+       <div class="text-md py-1 font-semibold flex items-center justify-between flex-wrap gap-1 m-section"><p>Hosting</p><button onclick="handleClick(0)">+</button>
+        <div class="w-full bg-white rounded px-3 py-2 font-medium text-sm text-blue-400 hidden">
+         <ul><li><a href="#">Web Hosting</a></li><li><a href="#">VPS Hosting</a></li><li><a href="#">Cloud Hosting</a></li><li><a href="#">WordPress Hosting</a></li><li><a href="#">Email Hosting</a></li><li><a href="#">Ecommerce Hosting</a></li><li><a href="#">Free Web Hosting</a></li><li><a href="#">Buy Hosting</a></li></ul>
+        </div>
+       </div>
+       <div class="text-md py-1 font-semibold flex items-center justify-between flex-wrap gap-1 m-section"><p>Domain</p><button onclick="handleClick(1)">+</button>
+        <div class="w-full bg-white rounded px-3 py-2 font-medium text-sm text-blue-400 hidden">
+         <ul><li><a href="#">Domain Name Search</a></li><li><a href="#">Domain Transfer</a></li><li><a href="#">Free Domain Name</a></li><li><a href="#">XYZ Domain</a></li><li><a href="#">Cheap Domains</a></li><li><a href="#">WHOIS Lookup</a></li><li><a href="#">SSL Certificate</a></li></ul>
+        </div>
+       </div>
+       <div class="text-md py-1 font-semibold flex items-center justify-between flex-wrap gap-1 m-section"><p>Help</p><button onclick="handleClick(2)">+</button>
+        <div class="w-full bg-white rounded px-3 py-2 font-medium text-sm text-blue-400 hidden">
+         <ul><li><a href="#">Tutorials</a></li><li><a href="#">Knowledge Base</a></li><li><a href="#">Report Online Abuse</a></li></ul>
+        </div>
+       </div>
+       <div class="text-md py-1 font-semibold flex items-center justify-between flex-wrap gap-1 m-section"><p>Company</p><button onclick="handleClick(3)">+</button>
+        <div class="w-full bg-white rounded px-3 py-2 font-medium text-sm text-blue-400 hidden">
+         <ul><li><a href="#">About Hostinger</a></li><li><a href="#">Our Technology</a></li><li><a href="#">Roadmap</a></li><li><a href="#">Customer Care</a></li><li><a href="#">Blog</a></li></ul>
+        </div>
+       </div>
+       <div class="text-md py-1 font-semibold flex items-center justify-between flex-wrap gap-1 m-section"><p>Information</p><button onclick="handleClick(4)">+</button>
+        <div class="w-full bg-white rounded px-3 py-2 font-medium text-sm text-blue-400 hidden">
+         <ul><li><a href="#">Migrate to Hostinger</a></li><li><a href="#">System Status</a></li><li><a href="#">Affiliate Program</a></li><li><a href="#">Payment Methods</a></li><li><a href="#">Rewards</a></li><li><a href="#">Reviews</a></li><li><a href="#">Pricing</a></li><li><a href="#">Sitemap</a></li></ul>
+        </div>
+       </div>
+       <div class="text-md py-1 font-semibold flex items-center justify-between flex-wrap gap-1 m-section"><p>Legal</p><button onclick="handleClick(5)">+</button>
+        <div class="w-full bg-white rounded px-3 py-2 font-medium text-sm text-blue-400 hidden">
+         <ul><li><a href="#">Privacy Policies</a></li><li><a href="#">Terms of Service</a></li></ul>
+        </div>
+       </div>
+     </div>
+     <hr class="bg-blue-800"/>
+     <p class="pt-2 text-sm text-[#012B73] font-small">© 2004-2022 hostinger.in - India’s #1 Web Hosting & Domains provider.</p>
+    </div>
+    </main>
+  </div>
+  <script>
+    function bannerUp() {
+      let images = ['https://cdn-icons-png.flaticon.com/512/3343/3343387.png','https://cdn-icons-png.flaticon.com/512/2969/2969359.png','https://cdn-icons-png.flaticon.com/512/8456/8456564.png'];
+      let ico = document.getElementsByClassName('banner-ico')[0];
+      let index = Math.round(Math.random() * 2);
+       ico.src = images[index];
+    } setInterval(bannerUp, 5000);
+    
+    function handleClick(ind){
+    	let section = document.getElementsByClassName('m-section');
+        let menu = section[ind].getElementsByTagName('div')[0];
+        let button = section[ind].getElementsByTagName('button')[0];
+        if(menu.style.display == 'none'){
+        	menu.style.display = 'block';
+            button.innerHTML = '×';
+        } else { menu.style.display = 'none'; button.innerHTML = '+'; }
+        console.log(menu);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Hostinger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FFFFFF"/>
+  <meta name="" content="Nikhil Raj" />
+  <link rel="icon" type="image/svg" sizes="32*32" href="https://cdn.worldvectorlogo.com/logos/hostinger.svg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+    .patua {
+      font-family: 'Patua One', cursive;  
+    }
+  </style>
+</head>
+<body>
+  <div class="m-auto flex flex-col h-screen">
+     <div class="nav py-3 bg-white flex justify-between items-center flex-wrap shadow-md">
+       <div class="uppercase px-3 text-xl text-[#012b73] patua tracking-wide"><a href="/">Hostinger</a></div>
+     </div>
+    <main class="flex-1 overflow-auto">
+     <div class="flex justify-center md:p-5 md:pt-16 pt-5 items-center gap-5 overflow-auto">
+      <div class="w-full md:min-w-[350px] max-w-[450px] px-3">
+        <div class="px-3 py-3 rounded-xl">
+         <form>
+          <div class="flex justify-center pb-14"><image src="https://cdn-icons-png.flaticon.com/512/1177/1177568.png" class="w-24" alt="Icon"/></div>
+          <div class="px-5 bg-slate-100 py-2 rounded-full flex items-center gap-3"><i class ="bi bi-envelope-fill text-xl text-[#555555]"></i><input placeholder="Email" class="h-9 grow bg-slate-100 outline-none text-[#555]" type="email" /></div>
+          <div class="px-5 mt-3 bg-slate-100 py-2 rounded-full flex items-center gap-3"><i class ="bi bi-key text-xl text-[#555555]"></i><input placeholder="Password" class="h-9 grow bg-slate-100 outline-none text-[#555]" type="password" /></div>
+          <p class="text-right text-sm font-medium pt-2 text-[#555555] pr-3"><button>Forgot Password?</button></p>
+          <div class="mt-5"><button class="bg-blue-500 w-full rounded-full p-3 text-white font-bold text-lg">LOGIN</button></div>
+         </form>
+          <p class="pt-6 text-center text-sm font-medium text-[#555555] font-semibold">Or Login Using</p>
+          <div class="text-center pt-3 flex gap-4 justify-center"><button><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/48px-Google_%22G%22_Logo.svg.png?20210618182606" class="h-10" alt="Google" /></button><button><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png?20200820101156" class="h-10" alt="Facebook" /></button></div> 
+          <p class=" w-full text-center text-[#012B73] font-semibold text-medium text-md pt-20"><button class="py-2 px-5 border-2 border-[#013B73] rounded-full">Create Your Account</button></p>
+        </div>
+      </div>
+     </div>
+     <div class="footer bg-sky-100 p-5">
+      <img src="https://assets.hostinger.com/images/logo-homepage2020-f9c79137d7.svg" alt="icon" />
+      <p class="text-sm text-[#012B73] pt-3">We are a web hosting company with a mission to help everyone who goes online succeed.
+ We accomplish this by continuously developing server technology, giving expert assistance, and ensuring a flawless online website hosting experience.</p>
+      <div class="flex space-around flex-wrap gap-2 py-3"><img src="https://assets.hostinger.com/images/payments/homepage-2020-payments/rupay-2bad18f6df.png" alt="Card" /><img src="https://assets.hostinger.com/images/payments/homepage-2020-payments/visa-5d68dadf24.png" alt="Card" /><img src="https://assets.hostinger.com/images/payments/homepage-2020-payments/mastercard-ca75c7f8d3.png" alt="Card" /><img src="https://assets.hostinger.com/images/payments/homepage-2020-payments/dinersclub-3f02e2deec.png" alt="Card" /><img src="https://assets.hostinger.com/images/payments/homepage-2020-payments/discover-1e5edf3f39.png" alt="Card" /></div>
+      <hr class="bg-blue-800"/>
+      <div class="py-3 text-[#666666]">
+        <div class="text-md py-1 font-semibold flex items-center justify-between flex-wrap gap-1 m-section"><p>Hosting</p><button onclick="handleClick(0)">+</button>
+         <div class="w-full bg-white rounded px-3 py-2 font-medium text-sm text-blue-400 hidden">
+          <ul><li><a href="#">Web Hosting</a></li><li><a href="#">VPS Hosting</a></li><li><a href="#">Cloud Hosting</a></li><li><a href="#">WordPress Hosting</a></li><li><a href="#">Email Hosting</a></li><li><a href="#">Ecommerce Hosting</a></li><li><a href="#">Free Web Hosting</a></li><li><a href="#">Buy Hosting</a></li></ul>
+         </div>
+        </div>
+        <div class="text-md py-1 font-semibold flex items-center justify-between flex-wrap gap-1 m-section"><p>Domain</p><button onclick="handleClick(1)">+</button>
+         <div class="w-full bg-white rounded px-3 py-2 font-medium text-sm text-blue-400 hidden">
+          <ul><li><a href="#">Domain Name Search</a></li><li><a href="#">Domain Transfer</a></li><li><a href="#">Free Domain Name</a></li><li><a href="#">XYZ Domain</a></li><li><a href="#">Cheap Domains</a></li><li><a href="#">WHOIS Lookup</a></li><li><a href="#">SSL Certificate</a></li></ul>
+         </div>
+        </div>
+        <div class="text-md py-1 font-semibold flex items-center justify-between flex-wrap gap-1 m-section"><p>Help</p><button onclick="handleClick(2)">+</button>
+         <div class="w-full bg-white rounded px-3 py-2 font-medium text-sm text-blue-400 hidden">
+          <ul><li><a href="#">Tutorials</a></li><li><a href="#">Knowledge Base</a></li><li><a href="#">Report Online Abuse</a></li></ul>
+         </div>
+        </div>
+        <div class="text-md py-1 font-semibold flex items-center justify-between flex-wrap gap-1 m-section"><p>Company</p><button onclick="handleClick(3)">+</button>
+         <div class="w-full bg-white rounded px-3 py-2 font-medium text-sm text-blue-400 hidden">
+          <ul><li><a href="#">About Hostinger</a></li><li><a href="#">Our Technology</a></li><li><a href="#">Roadmap</a></li><li><a href="#">Customer Care</a></li><li><a href="#">Blog</a></li></ul>
+         </div>
+        </div>
+        <div class="text-md py-1 font-semibold flex items-center justify-between flex-wrap gap-1 m-section"><p>Information</p><button onclick="handleClick(4)">+</button>
+         <div class="w-full bg-white rounded px-3 py-2 font-medium text-sm text-blue-400 hidden">
+          <ul><li><a href="#">Migrate to Hostinger</a></li><li><a href="#">System Status</a></li><li><a href="#">Affiliate Program</a></li><li><a href="#">Payment Methods</a></li><li><a href="#">Rewards</a></li><li><a href="#">Reviews</a></li><li><a href="#">Pricing</a></li><li><a href="#">Sitemap</a></li></ul>
+         </div>
+        </div>
+        <div class="text-md py-1 font-semibold flex items-center justify-between flex-wrap gap-1 m-section"><p>Legal</p><button onclick="handleClick(5)">+</button>
+         <div class="w-full bg-white rounded px-3 py-2 font-medium text-sm text-blue-400 hidden">
+          <ul><li><a href="#">Privacy Policies</a></li><li><a href="#">Terms of Service</a></li></ul>
+         </div>
+        </div>
+      </div>
+      <hr class="bg-blue-800"/>
+      <p class="pt-2 text-sm text-[#012B73] font-small">© 2004-2022 hostinger.in - India’s #1 Web Hosting & Domains provider.</p>
+     </div>
+    </main>
+  </div>
+</body>
+</html>
